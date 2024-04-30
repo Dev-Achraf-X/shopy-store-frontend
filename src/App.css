@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+::-webkit-scrollbar{
+display: none;
+
+}
+@media screen and (min-width: 480px) {
+  ::-webkit-scrollbar{
+    display: block;
+  }
+}
+
+.link > {
+  @apply hover:text-gray-800 hover:underline hover:underline-offset-2;
+}
+
+.min-height {
+  height: calc(100vh - 80px);
+}
+
+.image:hover :last-child {
+  z-index: 20;
+}
+
+.cate-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cate-row {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cate-btn {
+  position: absolute;
+  min-width: 100px;
+  width: fit-content;
+  height: 50px;
+  padding: 10px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  cursor: pointer;
+  border: none;
+  background-color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.cate-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.footer-items {
+  @apply flex-1 flex flex-col gap-2.5 text-justify text-[14px];
+}
+
+.footer-items h1 {
+  @apply text-lg font-medium text-[#555];
+}
+
+.footer-items span {
+  color: gray;
+}
+
+.filter-item {
+  @apply mb-7;
+}
+
+.filter-item h2 {
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.input-item {
+  margin-bottom: 10px;
+}
+
+.input-item label {
+  margin-left: 10px;
+}
+
+.flex-3 {
+  flex: 3;
+}
+
+.flex-5 {
+  flex: 5;
+}
+
+.color-change {
+  animation: color-animate 5s infinite;
+}
+
+@keyframes color-animate {
+  0% {color: blue;}
+  50% {color: black;}
+  100% {color: blue}
+}
