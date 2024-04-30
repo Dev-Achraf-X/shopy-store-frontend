@@ -12,19 +12,13 @@ function Card({ item }) {
             </span>
           )}
           <img
-            src={
-              import.meta.env.VITE_UPLOAD_URL +
-              item?.attributes?.img?.data?.attributes?.url
-            }
+            src={item?.attributes?.img?.data?.attributes?.url}
             alt=""
             className="w-[100%] h-[100%] object-cover absolute z-10"
           />
 
           <img
-            src={
-              import.meta.env.VITE_UPLOAD_URL +
-              item?.attributes?.img2?.data?.attributes?.url
-            }
+            src={item?.attributes?.img2?.data?.attributes?.url}
             alt=""
             className="w-[100%] h-[100%] object-cover absolute"
           />

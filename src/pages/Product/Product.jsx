@@ -7,7 +7,7 @@ import { addProductToCart } from "../../context/CartReducer";
 
 function Product() {
   const id = useParams().id;
-  const { data, loading, error } = useFetch(`/products/${id}?populate=*`);
+  const { data } = useFetch(`/products/${id}?populate=*`);
   const [selectedImg, setSelectedImg] = useState("img");
   const [quantity, setQuantity] = useState(1);
 
@@ -24,19 +24,13 @@ function Product() {
           <div className="max-w-[600px] flex items-center justify-between gap-4">
             {/* Choosing image */}
             <img
-              src={
-                import.meta.env.VITE_UPLOAD_URL +
-                data?.attributes?.img?.data?.attributes?.url
-              }
+              src={data?.attributes?.img?.data?.attributes?.url}
               alt=""
               className="w-1/2 h-[150px] object-cover cursor-pointer mb-2.5 border-2 border-blue-600 hover:scale-105 transition-all rounded"
               onClick={() => handleClickImage("img")}
             />
             <img
-              src={
-                import.meta.env.VITE_UPLOAD_URL +
-                data?.attributes?.img2?.data?.attributes?.url
-              }
+              src={data?.attributes?.img2?.data?.attributes?.url}
               alt=""
               className="w-1/2 h-[150px] object-cover cursor-pointer mb-2.5 border-2 border-blue-600 hover:scale-105 transition-all rounded"
               onClick={() => handleClickImage("img2")}
@@ -45,10 +39,7 @@ function Product() {
           <div className="max-w-[600px] max-h-[600px]">
             {/* Main image */}
             <img
-              src={
-                import.meta.env.VITE_UPLOAD_URL +
-                data?.attributes?.[selectedImg].data?.attributes?.url
-              }
+              src={data?.attributes?.[selectedImg].data?.attributes?.url}
               alt=""
               className="w-full max-h-[800px] object-cover"
             />
@@ -91,9 +82,7 @@ function Product() {
                   id: data?.id,
                   title: data?.attributes?.title,
                   price: data?.attributes?.price,
-                  img:
-                    import.meta.env.VITE_UPLOAD_URL +
-                    data?.attributes?.img?.data?.attributes?.url,
+                  img:data?.attributes?.img2?.data?.attributes?.url,
                   quantity,
                 })
               )

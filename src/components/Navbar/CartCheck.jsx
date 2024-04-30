@@ -62,7 +62,7 @@ function CartCheck({ setShowCart }) {
           <Trash2
             size={30}
             className="text-red-500"
-            onClick={() => dispatch(removeProduct(item.id))}
+            onClick={() => dispatch(removeProduct(item?.id))}
           />
         </div>
       ))}
