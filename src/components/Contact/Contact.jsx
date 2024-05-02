@@ -4,7 +4,7 @@ import React from "react";
 function Contact() {
   return (
     <div className="bg-blue-600 text-white p-4 flex justify-center">
-      <div className="w-1/2 flex items-center justify-between">
+      <div className="lg:w-1/2 flex flex-col md:flex-row items-center justify-between gap-5 ">
         <span>BE IN TOUCH WITH US:</span>
         <div>
           <input
